@@ -19,7 +19,7 @@ After(async ()=>  {
 });
 
 Given('User has open the landing Page', async function() {
-    // Write code here that turns the phrase above into concrete actions
+    // Write code here that turns the phrase above into concrete actionss
     await driver.get("http://127.0.0.1:5500/index.html");
     // const titlePage = await driver.findElement(By.css("h1"));
     let titleText = await driver.getTitle();
