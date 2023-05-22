@@ -2,45 +2,46 @@
     "form": {
         "title": "DSE form",
         "nav": {
-            "nav-title": "Sections",
-            "nav-sections": [
+            "nav_title": "Sections",
+            "nav_sections": [
                 {
-                    "display-name": "Home"
+                    "display_name": "Home"
                 },
                 {
-                    "display-name": "Keyboard"
+                    "display_name": "Keyboard"
                 },
                 {
-                    "display-name": "Mouse, trackball etc"
+                    "display_name": "Mouse, trackball etc"
                 },
                 {
-                    "display-name": "Display screens"
+                    "display_name": "Display screens"
                 },
                 {
-                    "display-name": "Software"
+                    "display_name": "Software"
                 },
                 {
-                    "display-name": "Furniture"
+                    "display_name": "Furniture"
                 },
                 {
-                    "display-name": "Environment"   
+                    "display_name": "Environment"   
                 }
             ],
-            "backgrourd-colour": "#283e63",
-            "submit-button": {
+            "backgrourd_colour": "#283e63",
+            "submit_button": {
                 "value": "Submit",
-                "class": "btn btn-success",
+                "class": "btn btn_success",
                 "type": "submit"
             }
         },
-        "person-info": {
-            "title": "Personal Information:",
+        "personal_info": {
+            "title": "Personal Information",
             "name": "user",
             "inputs": [
                 {
                     "name": "workstation",
                     "label": "Workstation location and number (if applicable):",
-                    "type": "text"
+                    "type": "text",
+                    "required": false
                 },
                 {
                     "name": "user",
@@ -55,219 +56,215 @@
                     "required": true
                 },
                 {
-                    "name": "checked-by",
+                    "name": "checked_by",
                     "label": "Assessment checked by:",
                     "type": "text",
                     "required": true
                 },
                 {
-                    "name": "checklist",
-                    "label": "Checklist completed by:",
-                    "type": "text",
-                    "required": true
-                },
-                {
-                    "name": "further-act",
+                    "name": "further_act",
                     "label": "Any further action needed:",
                     "type": "radio",
-                    "radio-name": "action-radio",
-                    "radio-field-yes": {
-                        "value": "yes",
-                        "label": "Yes"
-                    },
-                    "radio-field-no": {
-                        "value": "no",
-                        "label": "No"
+                    "radio_name": "any_further_action_needed",
+                    "radio_fields": {
+                        "value": ["yes","no"],
+                        "radio_label": ["Yes","No"]
                     },
                     "required": true
                 },
                 {
-                    "name": "act-date",
-                    "label": "Follow-up action completed on:",
-                    "type": "text",
+                    "name": "follow_up_action_completed_on",
+                    "label": "Follow up action completed on:",
+                    "type": "date",
                     "required": true
                 }
             ]
         },
         "questions": {
-            "addition-label": "Things to Consider",
-            "label": "Select Yes or No",
-            "radio": true,
-            "radio-field-yes": {
-                "value": "yes",
-                "label": "Yes"
-            },
-            "radio-field-no": {
-                "value": "no",
-                "label": "No"
+            
+            "elements":[
+                "radio", "textarea"
+            ],
+            "radio_fields": {
+                "addition_label": "Things to Consider",
+                "label": "Select Yes or No",
+                "name":"yesOrNo",
+                "value": ["yes","no"],
+                "radio_label": ["Yes","No"]
             },
             "sections": [
                 {
-                    "section-title": "keyboard",
-                    "section-questions": [
+                    "section_title": "Keyboard",
+                    "friendly_name": "keyboard",
+                    "section_questions": [
                         {
                             "question": "Is the keyboard separate from the screen?",
-                            "additional-info": "This is a requirement, unless the task makes it impracticable (eg where there is a need to use a portable)"
+                            "additional_info": "This is a requirement, unless the task makes it impracticable (eg where there is a need to use a portable)"
                         },
                         {
                             "question": "Does the keyboard tilt?",
-                            "additional-info": "Does the keyboard tilt"
+                            "additional_info": "Does the keyboard tilt"   
                         },
                         {
                             "question": "Is it possible to find a comfortable keying position?",
-                            "additional-info": "Try pushing the display screen further back to create more room for the keyboard, hands and wrists. Users of thick, raised keyboards may need a wrist rest."
+                            "additional_info": "Try pushing the display screen further back to create more room for the keyboard, hands and wrists. Users of thick, raised keyboards may need a wrist rest."
                         },
                         {
                             "question": "Does the user have good keyboard technique?",
-                            "additional-info": "Training can be used to prevent: hands bent up at the wrist, hitting the keys too hard, overstretching the fingers."
+                            "additional_info": "Training can be used to prevent: hands bent up at the wrist, hitting the keys too hard, overstretching the fingers."
                         },
                         {
                             "question": "Are the characters clear and readable?",
-                            "additional-info": "Keyboards should be kept clean. If characters still can not be read, the keyboard may need modifying or replacing. Use a keyboard with a matt finish to reduce glare and/or reflection."
+                            "additional_info": "Keyboards should be kept clean. If characters still can not be read, the keyboard may need modifying or replacing. Use a keyboard with a matt finish to reduce glare and/or reflection."
                         }
                     ]
                 },
                 {
-                    "section-title": "Mouse, trackball etc",
-                    "section-questions": [
+                    "section_title": "Mouse, trackball etc",
+                    "friendly_name": "mouse",
+                    "section_questions": [
                         {
                             "question": "Is the device suitable for the tasks it is used for?",
-                            "additional-info": "If the user is having problems, try a different device. The mouse and trackball are general-purpose devices suitable for many tasks, and available in a variety of shapes and sizes. Alternative devices such as touch screens may be better for some tasks (but can be worse for others). "
+                            "additional_info": "If the user is having problems, try a different device. The mouse and trackball are general_purpose devices suitable for many tasks, and available in a variety of shapes and sizes. Alternative devices such as touch screens may be better for some tasks (but can be worse for others). "
                         },
                         {
                             "question": "Is the device positioned close to the user?",
-                            "additional-info": "Most devices are best placed as close as possible, eg right beside the keyboard. Training may be needed to: prevent arm overreaching, encourage users not to leave their hand on the device when it is not being used, encourage a relaxed arm and straight wrist.",
+                            "additional_info": "Most devices are best placed as close as possible, eg right beside the keyboard. Training may be needed to: prevent arm overreaching, encourage users not to leave their hand on the device when it is not being used, encourage a relaxed arm and straight wrist.",
                             "img": ""
                         },
                         {
                             "question": "Is there support for the device user's wrist and forearm?",
-                            "additional-info": "Support can be gained from, for example, the desk surface or arm of a chair. If not, a separate supporting device may help. The user should be able to find a comfortable working position with the device."
+                            "additional_info": "Support can be gained from, for example, the desk surface or arm of a chair. If not, a separate supporting device may help. The user should be able to find a comfortable working position with the device."
                         },
                         {
                             "question": "Does the device work smoothly at a speed that suits the user?",
-                            "additional-info": "See if cleaning is required (eg of mouse ball and rollers). Check the work surface is suitable. A mouse mat may be needed."
+                            "additional_info": "See if cleaning is required (eg of mouse ball and rollers). Check the work surface is suitable. A mouse mat may be needed."
                         },
                         {
                             "question": "Can the user easily adjust software settings for speed and accuracy of pointer?",
-                            "additional-info": "Users may need training in how to adjust device settings."
+                            "additional_info": "Users may need training in how to adjust device settings."
                         }
                     ]
                 },
                 {
-                    "section-title": "Display screens",
-                    "section-questions": [
+                    "section_title": "Display screens",
+                    "friendly_name": "display_screen",
+                    "section_questions": [
                         {
                             "question": "Are the characters clear and readable?",
-                            "additional-info": "Make sure the screen is clean and cleaning materials are available. Check that the text and background colours work well together.",
+                            "additional_info": "Make sure the screen is clean and cleaning materials are available. Check that the text and background colours work well together.",
                             "img": ""
                         },
                         {
                             "question": "Is the text size comfortable to read?",
-                            "additional-info": "Software settings may need adjusting to change text size."
+                            "additional_info": "Software settings may need adjusting to change text size."
                         },
                         {
                             "question": "Is the image stable, ie free of flicker and jitter?",
-                            "additional-info": "Try using different screen colours to reduce flicker, eg darker background and lighter text. If there are still problems, get the set-up checked, eg by the equipment supplier."
+                            "additional_info": "Try using different screen colours to reduce flicker, eg darker background and lighter text. If there are still problems, get the set_up checked, eg by the equipment supplier."
                         },
                         {
                             "question": "Is the screen's specification suitable for its intended use?",
-                            "additional-info": "For example, intensive graphic work or work requiring fine attention to small details may require large display screens."
+                            "additional_info": "For example, intensive graphic work or work requiring fine attention to small details may require large display screens."
                         },
                         {
                             "question": "Are the brightness and/or contrast adjustable?",
-                            "additional-info": "Separate adjustment controls are not essential, provided the user can read the screen easily at all times."
+                            "additional_info": "Separate adjustment controls are not essential, provided the user can read the screen easily at all times."
                         },
                         {
                             "question": "Does the screen swivel and tilt?",
-                            "additional-info": "Swivel and tilt need not be built in; you can add a swivel and tilt mechanism. However, you may need to replace the screen if: swivel/tilt is absent or unsatisfactory, work is intensive, and/or the user has problems getting the screen to a comfortable position."
+                            "additional_info": "Swivel and tilt need not be built in; you can add a swivel and tilt mechanism. However, you may need to replace the screen if: swivel/tilt is absent or unsatisfactory, work is intensive, and/or the user has problems getting the screen to a comfortable position."
                         },
                         {
                             "question": "Is the screen free from glare and reflections?",
-                            "additional-info": "Use a mirror placed in front of the screen to check where reflections are coming from. You might need to move the screen or even the desk and/or shield the screen from the source of the reflections. Screens that use dark characters on a light background are less prone to glare and reflections.",
+                            "additional_info": "Use a mirror placed in front of the screen to check where reflections are coming from. You might need to move the screen or even the desk and/or shield the screen from the source of the reflections. Screens that use dark characters on a light background are less prone to glare and reflections.",
                             "img": ""
                         },
                         {
                             "question": "Are adjustable window coverings provided and in adequate condition?",
-                            "additional-info": "Check that blinds work. Blinds with vertical slats can be more suitable than horizontal ones. If these measures do not work, consider anti-glare screen filters as a last resort and seek specialist help."
+                            "additional_info": "Check that blinds work. Blinds with vertical slats can be more suitable than horizontal ones. If these measures do not work, consider anti_glare screen filters as a last resort and seek specialist help."
                         }
                     ]
                 },
                 {
-                    "section-title": "Software",
-                    "section-questions": [
+                    "section_title": "Software",
+                    "friendly_name": "software",
+                    "section_questions": [
                         {
                             "question": "Is the software suitable for the task?",
-                            "additional-info": "Software should help the user carry out the task, minimise stress and be user-friendly. Check users have had appropriate training in using the software. Software should respond quickly and clearly to user input, with adequate feedback, such as clear help messages."
+                            "additional_info": "Software should help the user carry out the task, minimise stress and be user_friendly. Check users have had appropriate training in using the software. Software should respond quickly and clearly to user input, with adequate feedback, such as clear help messages."
                         }
                     ]
                 },
                 {
-                    "section-title": "Furniture",
-                    "section-questions": [
+                    "section_title": "Furniture",
+                    "friendly_name": "furniture",
+                    "section_questions": [
                         {
                             "question": "Is the work surface large enough for all the necessary equipment, papers etc?",
-                            "additional-info": "Create more room by moving printers, reference materials etc elsewhere. If necessary, consider providing new power and telecoms sockets, so equipment can be moved. There should be some scope for flexible rearrangement.",
+                            "additional_info": "Create more room by moving printers, reference materials etc elsewhere. If necessary, consider providing new power and telecoms sockets, so equipment can be moved. There should be some scope for flexible rearrangement.",
                             "img": ""
                         },
                         {
                             "question": "Can the user comfortably reach all the equipment and papers they need to use?",
-                            "additional-info": "Rearrange equipment, papers etc to bring frequently used things within easy reach. A document holder may be needed, positioned to minimise uncomfortable head and eye movements."
+                            "additional_info": "Rearrange equipment, papers etc to bring frequently used things within easy reach. A document holder may be needed, positioned to minimise uncomfortable head and eye movements."
                         },
                         {
                             "question": "Is it possible to find a comfortable keying position?",
-                            "additional-info": "Try pushing the display screen further back to create more room for the keyboard, hands and wrists. Users of thick, raised keyboards may need a wrist rest."
+                            "additional_info": "Try pushing the display screen further back to create more room for the keyboard, hands and wrists. Users of thick, raised keyboards may need a wrist rest."
                         },
                         {
                             "question": "Are surfaces free from glare and reflection?",
-                            "additional-info": "Consider mats or blotters to reduce reflections and glare."
+                            "additional_info": "Consider mats or blotters to reduce reflections and glare."
                         },
                         {
                             "question": "Is the chair suitable? Is the chair stable? Does the chair have a working: seat back height and tilt adjustment? Seat height adjustment? Castors or glides?",
-                            "additional-info": "The chair may need repairing or replacing if the user is uncomfortable, or cannot use the adjustment mechanisms."
+                            "additional_info": "The chair may need repairing or replacing if the user is uncomfortable, or cannot use the adjustment mechanisms."
                         },
                         {
                             "question": "Is the chair adjusted correctly?",
                             "id": "f5",
-                            "additional-info": "The user should be able to carry out their work sitting comfortably. Consider training the user in how to adopt suitable postures while working. The arms of chairs can stop the user getting close enough to use the equipment comfortably. Move any obstructions from under the desk.",
+                            "additional_info": "The user should be able to carry out their work sitting comfortably. Consider training the user in how to adopt suitable postures while working. The arms of chairs can stop the user getting close enough to use the equipment comfortably. Move any obstructions from under the desk.",
                             "img": ""
                         },
                         {
                             "question": "Are forearms horizontal and eyes at roughly the same height as the top of the DSE?",
-                            "additional-info": "Adjust the chair height to get the user's arms in the right position, and then adjust the DSE height, if necessary.  "
+                            "additional_info": "Adjust the chair height to get the user's arms in the right position, and then adjust the DSE height, if necessary.  "
                         },
                         {
                             "question": "Are feet flat on the floor, without too much pressure from the seat on the backs of the legs?",
-                            "additional-info": "If not, a footrest may be needed."
+                            "additional_info": "If not, a footrest may be needed."
                         }
                     ]
                 },
                 {
-                    "section-title": "Environment",
-                    "section-questions": [
+                    "section_title": "Environment",
+                    "friendly_name": "environment",
+                    "section_questions": [
                         {
                             "question": "Is there enough room to change position and vary movement?",
-                            "additional-info": "Space is needed to move, stretch and fidget. Consider reorganising the office layout and check for obstructions. Cables should be tidy and not a trip or snag hazard."
+                            "additional_info": "Space is needed to move, stretch and fidget. Consider reorganising the office layout and check for obstructions. Cables should be tidy and not a trip or snag hazard."
                         },
                         {
                             "question": "Is the lighting suitable, eg not too bright or too dim to work comfortably?",
-                            "additional-info": "DSE and other equipment may dry the air. Circulate fresh air if possible. Plants may help. Consider a humidifier if discomfort is severe."
+                            "additional_info": "DSE and other equipment may dry the air. Circulate fresh air if possible. Plants may help. Consider a humidifier if discomfort is severe."
                         },
                         {
                             "question": "Does the air feel comfortable?",
-                            "additional-info": "Try pushing the display screen further back to create more room for the keyboard, hands and wrists. Users of thick, raised keyboards may need a wrist rest."
+                            "additional_info": "Try pushing the display screen further back to create more room for the keyboard, hands and wrists. Users of thick, raised keyboards may need a wrist rest."
                         },
                         {
                             "question": "Are levels of heat comfortable?",
-                            "additional-info": "Can heating be better controlled? More ventilation or air conditioning may be required if there is a lot of electronic equipment in the room. Or, can users be moved away from the heat source?"
+                            "additional_info": "Can heating be better controlled? More ventilation or air conditioning may be required if there is a lot of electronic equipment in the room. Or, can users be moved away from the heat source?"
                         },
                         {
                             "question": "Are levels of noise comfortable?",
-                            "additional-info": "Consider moving sources of noise, eg printers, away from the user. If not, consider soundproofing."
+                            "additional_info": "Consider moving sources of noise, eg printers, away from the user. If not, consider soundproofing."
                         }
                     ]
                 }
             ],
-            "addition-section": {
+            "addition_section": {
                 "title": " Final questions to users",
                 "question": [
                     "Has the checklist covered all the problems they may have working with their DSE?",

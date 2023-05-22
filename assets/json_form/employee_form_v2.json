@@ -1,0 +1,202 @@
+{
+    "form": {
+        "title": "Employee Details Form:",
+        "nav": {
+            "nav_title": "Sections",
+            "nav_sections": [
+                {
+                    "display_name": "Personal Information"
+                },
+                {
+                    "display_name": "Emergency Contact Details"
+                },
+                {
+                    "display_name": "Medical Info"
+                },
+                {
+                    "display_name": "Medical Contact Info"
+                }
+            ]
+        },
+        "personal_info": {
+            "title": "Personal Information",
+            "inputs": [
+                {
+                    "name": "full_name",
+                    "label": "Full Name",
+                    "type": "text"
+                },
+                {
+                    "name": "Address",
+                    "label": "Address",
+                    "type": "text"
+                },
+                {
+                    "name": "Date_of_birth",
+                    "label": "Date of Birth",
+                    "type": "date"
+                },
+                {
+                    "name": "Phone_number",
+                    "label": "Phone Number",
+                    "type": "number"
+                },
+                {
+                    "name": "Email_Address",
+                    "label": "Email Address",
+                    "type": "email"
+                },
+                {
+                    "name": "National_Insurance_Number",
+                    "label": "National Insurance Number",
+                    "type": "number"
+                },
+                {
+                    "name": "Bank_Account_Name",
+                    "label": "Bank Account Name",
+                    "type": "text"
+                },
+                {
+                    "name": "Bank_and_Branch_Address",
+                    "label": "Bank and Branch Address",
+                    "type": "text"
+                },
+                {
+                    "name": "Account_number",
+                    "label": "Account Number",
+                    "type": "number"
+                },
+                {
+                    "name": "Sort_code",
+                    "label": "Sort Code",
+                    "type": "number"
+                }
+            ]
+        },
+        "questions": {
+            "elements": [
+                "input"
+            ],
+            "sections": [
+                {
+                    "section_title": "Emergency Contact Details",
+                    "section_questions": [
+                        {
+                            "question": "Contact Name 1",
+                            "additional_info": null,
+                            "type": "text",
+                            "name": "Contact_Name_1",
+                            "required": true
+                        },
+                        {
+                            "question": "Address",
+                            "additional_info": null,
+                            "type": "text",
+                            "name": "address_1",
+                            "required": true
+                        },
+                        {
+                            "question": "Telephone Number",
+                            "additional_info": null,
+                            "type": "text",
+                            "name": "Telephone_Number_1",
+                            "required": true
+                        },
+                        {
+                            "question": "Contact Name 2",
+                            "additional_info": null,
+                            "type": "text",
+                            "name": "Contact_Name_2",
+                            "required": false
+                        },
+                        {
+                            "question": "Address 2",
+                            "additional_info": null,
+                            "type": "text",
+                            "name": "address_2",
+                            "required": false
+                        },
+                        {
+                            "question": "Telephone Number 2",
+                            "additional_info": null,
+                            "type": "number",
+                            "name": "Telephone_Number_2",
+                            "required": false
+                        }
+                    ]
+                },
+                {
+                    "section_title": "Medical Info",
+                    "section_questions": [
+                        {
+                            "question": "Allergies",
+                            "additional_info": null,
+                            "type": "text",
+                            "name": "allergies",
+                            "required": false
+                        },
+                        {
+                            "question": "Allergies to medication",
+                            "additional_info": null,
+                            "type": "text",
+                            "name": "allergies_to_medication",
+                            "required": false
+                        },
+                        {
+                            "question": "Medication currently taken",
+                            "additional_info": null,
+                            "type": "text",
+                            "name": "medication_currently_taken",
+                            "required": false
+                        },
+                        {
+                            "question": "Other",
+                            "additional_info": null,
+                            "type": "textbox",
+                            "name": "other_info",
+                            "required": false
+                        }
+                    ]
+                },
+                {
+                    "section_title": "Medical Contact Info",
+                    "section_questions": [
+                        {
+                            "question": "Doctor",
+                            "additional_info": null,
+                            "type": "text",
+                            "name": "doctor",
+                            "required": false
+                        },
+                        {
+                            "question": "Doctor Address",
+                            "additional_info": null,
+                            "type": "text",
+                            "name": "doctor_address",
+                            "required": false
+                        },
+                        {
+                            "question": "Doctor telephone number",
+                            "additional_info": null,
+                            "type": "text",
+                            "name": "docter_telephone_number",
+                            "required": false
+                        }
+                    ]
+                }
+            ],
+            "addition_section": {
+                "title": "Please confirm enclosure of the following documents ",
+                "question": [
+                    "Full Birth certificate/Passport",
+                    "Right to Work UK/Visa",
+                    "Copy of Bank Statement",
+                    "Proof of Address (Utility Bill)",
+                    "Proof Of National Insurance Number",
+                    "P45",
+                    "References"
+                ]
+            }
+        }
+    }
+}

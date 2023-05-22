@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="gen">Forms Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="shortcut icon" href="../assets/shivom_logo.jpg" type="image/x-icon" />
+</head>
+
+<body>
+    <nav class="navbar bg-body-tertiary fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <%=df.form.title%>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                        <%=df.form.title%>
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <% let navSec=df.form.nav.nav_sections %>
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <% for( let i=0; i < navSec.length; i++ ) { %>
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="#">
+                                        <%= navSec[i].display_name %>
+                                    </a>
+                                </li>
+                                <% } %>
+                        </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div style="padding-top: 65px;">
+        <% let pf = df.form.personal_info %>
+        <h2>
+            <%= df.form.title %>
+
+        </h2>
+        
+    </div>
+
+    <div class="personal-info container">
+        <div class="row">
+            <div class="col-4 offset-4">
+                <h4><%=df.form.personal_info.title%></h4>
+            </div>
+        </div>
+
+        <form action="/results" method="post">
+
+            <div class="row">
+                <% let personInfo=df.form.personal_info.inputs %>
+                <p><%#- JSON.stringify(df.form.personal_info.inputs[5].radio_fields)  %> </p>
+                <!-- <p><%#= JSON.stringify(personInfo) %></p> -->
+
+                <% for( let i=0; i < personInfo.length; i++ ) { %>
+                    <div class="mb-3">
+                        <label for="<%=personInfo[i].name%>" class="form-label"><%=personInfo[i].label %></label>
+                        <% if (personInfo[i].type === "radio") { %>
+                            <div class="form-check">
+                                
+                                <% for( let j=0; j < personInfo[i].radio_fields.radio_label.length; j++ ) { %>
+                                <div>
+                                    <input class="form-check-input" type="radio" value="<%= personInfo[i].radio_fields.value[j] %>" name="<%=personInfo[i].radio_name%>" id="<%=personInfo[i].name%>" <% if(personInfo[i].required){  %> required <% } %> >   
+                                    <label class="form-check-label" for="">
+                                        <%= personInfo[i].radio_fields.radio_label[j] %>
+                                    </label>
+                                </div>
+                            
+                            <% } %>
+                            </div>
+                        <% } else { %>
+                            <input type="<%=personInfo[i].type%>" class="form-control" name="<%=personInfo[i].name%>" <% if(personInfo[i].required){  %> required <% } %>>
+                        <% } %> 
+                    </div>
+                <% } %> 
+                <input type="submit" value="Submit">
+            </div>
+
+        </form>
+        <hr class="mt-3">
+
+        <div class="container-fluid">
+            <% let questions=df.form.questions %>
+            <p><%#=JSON.stringify(questions)  %></p>
+            
+            <% if(questions.elements.includes("radio") && questions.elements.includes("textarea")){ %>
+                <div>
+                <% for(let i=0; i < questions.sections.length; i++){ %>
+                    <h6><%= questions.sections[i].section_title %></h6>
+                    <% for(let j=0; j < questions.sections[i].section_questions.length; j++){ %>
+                        <div class="row">
+                            <div class="col-2">
+                                <p><%= questions.sections[i].section_questions[j].question %></p>
+                            </div>
+                            <div class="col-2">
+                                <div class="row mb-2">
+                                    <label for=""><%= questions.radio_fields.label %></label>
+                                </div>
+                                <% for (let a = 0; a < questions.radio_fields.radio_label.length; a++) { %>
+                            
+                                    <label for=""><%= questions.radio_fields.radio_label[a] %></label>
+                                    <input type="radio" name="<%= questions.sections[i].friendly_name %><%=j %>" id="" value="<%= questions.radio_fields.value[a] %>">
+                                <% } %>
+                            </div>
+                            <div class="col-4">
+                                <div class="row mb-2">
+                                    <label for=""><%= questions.radio_fields.addition_label %></label>
+                                </div>
+                                
+                                <textarea name="" id="" cols="30" rows="5" class="form-control" disabled readonly><%= questions.sections[i].section_questions[j].additional_info %>
+                                </textarea>
+                            </div>
+                            <div class="col-4">
+                                <textarea name="" id="" cols="30" rows="5" class="form-control mt-4"></textarea>
+                            </div>
+                        </div>
+                    <% } %>
+                <% } %>
+                </div>
+            <% } else { %>
+                <div>
+                    <% for( let i = 0; i < questions.sections.length; i++ ) { %>
+                        <h6><%= questions.sections[i].section_title %></h6>
+                        <% for( let j = 0; j < questions.sections[i].section_questions.length; j++ ) { %>
+                            <div>
+                                <label for="" class="form-label"><%=questions.sections[i].section_questions[j].question %></label>
+                                <input class="form-control" type="<%=questions.sections[i].section_questions[j].type  %>" name="<%= questions.sections[i].section_questions[j].name %>"  <% if(questions.sections[i].section_questions[j].required){  %> required <% } %>>
+                                <p><%=questions.sections[i].section_questions[j].additional_info%></p>
+                            </div>
+                            
+                        <% } %>
+                    <% } %>
+                </div>
+            <% } %>
+            
+        </div>
+        
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+        integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
+        integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
