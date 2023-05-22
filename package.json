@@ -7,8 +7,8 @@
     "@cucumber/cucumber": "^8.11.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build":" npm install -g npm && npm i express && npm i ejs", 
+    
+    "build":"npm i express && npm i ejs", 
     "start": "node app.js"
   },
   "repository": {
