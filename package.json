@@ -1,0 +1,22 @@
+{
+  "name": "shivom-forms",
+  "description": "TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project.",
+  "version": "1.0.0",
+  "main": "cucumber.js",
+  "devDependencies": {
+    "@cucumber/cucumber": "^8.11.1"
+  },
+  "scripts": {
+    "test": "cucumber-js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://shivom-uk@dev.azure.com/shivom-uk/shivom-forms/_git/shivom-forms"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "selenium-webdriver": "^4.8.1"
+  }
+}
