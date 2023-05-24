@@ -68,9 +68,9 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: node-app
-    - uses: azure/actions/login@v1
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
+#     - uses: azure/actions/login@v1
+#       with:
+#         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
     - name: 'Deploy to Azure WebApp'
       id: deploy-to-webapp
