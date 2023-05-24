@@ -74,7 +74,7 @@ jobs:
 
     - name: 'Deploy to Azure WebApp'
       id: deploy-to-webapp
-      uses: azure/webapps-deploy@v2
+      uses: azure/webapps-deploy@668224d3018d5eb5bf8ab9ac2c80c5ae4a49a70f
       with:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
