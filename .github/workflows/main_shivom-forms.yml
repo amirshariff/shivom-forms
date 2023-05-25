@@ -73,7 +73,7 @@ jobs:
 #         creds: ${{ secrets.AZURE_CREDENTIALS }}
     - name: start app
       run: |
-        node package.json
+        node app.js
         
     - name: 'Deploy to Azure WebApp'
       id: deploy-to-webapp
