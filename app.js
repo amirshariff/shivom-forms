@@ -2,7 +2,7 @@ const express = require('express');
 const { request } = require('http');
 const path = require("path");
 const generatorRoute = require("./routes/generatorRoutes");
-const port = process.env.PORT || 3000
+const port = process.env.PORT | 3000
 
 const app = express();
 
