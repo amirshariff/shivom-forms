@@ -9,7 +9,7 @@
   "scripts": {
     
     "build":"npm i express && npm i ejs", 
-    "start": "node app.js"
+    "start": "node app"
   },
   "repository": {
     "type": "git",
