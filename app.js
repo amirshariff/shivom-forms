@@ -21,6 +21,6 @@ app.get("/", (req, res)=>{
 
 app.use(generatorRoute);
 
-app.listen(port, ()=>{
-    console.log(`Listen on ${PORT}`);
+app.listen(PORT, ()=>{
+    console.log(`Listening on ${PORT}`);
 });
