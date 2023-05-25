@@ -2,6 +2,7 @@ const express = require('express');
 const { request } = require('http');
 const path = require("path");
 const generatorRoute = require("./routes/generatorRoutes");
+const PORT= process.env.PORT || 3000
 
 const app = express();
 
@@ -20,6 +21,6 @@ app.get("/", (req, res)=>{
 
 app.use(generatorRoute);
 
-app.listen(80, ()=>{
-    console.log("listen on port 80");
+app.listen(port, ()=>{
+    console.log(`Listen on ${PORT}`);
 });
